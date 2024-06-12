@@ -1,4 +1,4 @@
-animal_list [
+animal_list = [
     "Penguin",
     "Cheetah",
     "Elephant",

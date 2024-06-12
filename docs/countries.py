@@ -1,4 +1,4 @@
-country_list [
+country_list = [
     "Pakistan",
     "Iran",
     "France",
