@@ -40,6 +40,18 @@ def user_name():
     user name
     """
 
+def menu():
+    """
+    Displays the menu choices
+    """
+    hangman_title()
+    menu_options = True
+    while menu_options:
+        print('Press 1 to start the game')
+        print('Press 2 for the rules of the game')
+        print('Press 3 to exit the game')
+        choice = input('Please choose one of the following options: \n')
+
     while True:
         user_name = input('Please enter your username: \n')
         if name.isalpha():
