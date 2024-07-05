@@ -40,6 +40,15 @@ def user_name():
     user name
     """
 
+    while True:
+        user_name = input('Please enter your username: \n')
+        if name.isalpha():
+            print('Welcome to the game{user_name}, All the best! \n')
+            play_game()
+            break
+        else:
+            print('User name invalid, please use only letters')
+
 def menu():
     """
     Displays the menu choices
@@ -52,16 +61,25 @@ def menu():
         print('Press 3 to exit the game')
         choice = input('Please choose one of the following options: \n')
 
-    while True:
-        user_name = input('Please enter your username: \n')
-        if name.isalpha():
-            print('Welcome to the game{user_name}, All the best! \n')
-            play_game()
-            break
-        else:
-            print('User name invalid, please use only letters')
+def rules():
+    """
+    displays the rule of the
+    game
+    """
+    print(
+        """
+        Welcome to the game of Hangman!
+        The rules are very simple, You have the choice of 3 word categories 
+        from cars, countries and animals. Once you choose your category, you
+        will then be given a random word, each unsuccesful guesses will a new body
+        part to the gallows. After 6 unsuccesful attempts the player will be hunged
+        and the game will be over. To be the winner, the player has to guess the
+        full word within the allocated 6 guesses
 
-
+        All the best!
+        """
+    )
+    menu()
 
 
 def play_game():
@@ -79,7 +97,4 @@ def play_game():
     lives = 6 
     print(secret_word)
     
-
-
-
 
