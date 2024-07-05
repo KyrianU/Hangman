@@ -81,6 +81,21 @@ def menu():
         print('Press 2 for the rules of the game')
         print('Press 3 to exit the game')
         choice = input('Please choose one of the following options: \n')
+        if option == '1':
+            menu_options = False
+            user_name()
+            get_word_category()
+            play_game()
+        elif option == '2':
+            menu_options = False
+            play_game()
+        elif option == '3':
+            menu_options = False
+            print('Thanks for playing, we hope to see you soon...')
+            exit()
+        else:
+            print(f'sorry,{option}is not a valid option, please choose between 1,2 or 3')
+            menu()
 
 def rules():
     """
