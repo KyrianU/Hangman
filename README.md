@@ -16,3 +16,9 @@
 - Scoring sytem with the best scores displayed on the leaderboard
 - Difficulty levels, this could by making words which contains up to 5 letters easy. Intermeditate levels between 6-8 and hard level for words with 8 letters and above 
 - Timer could be added to the game, the timer could be set according to difficulty levels
+
+# Credits
+
+- the visuals for the hangman stages were taken from this video [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w)
+- A lot of my game function drew inspiration from this tutorial [youtube](https://www.youtube.com/watch?v=cJJTnI22IF8)
+- My Word art at the start of the game was generated from this website [ASCII Art Generator](https://patorjk.com/software/taag/#p=display&h=1&f=Doom&t=Hangman)
