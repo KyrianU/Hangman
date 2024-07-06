@@ -10,3 +10,9 @@
 - the game should be easy 
 - Expects little to no bugs
 - Good response to player/user input
+
+# Features to Implement In future
+
+- Scoring sytem with the best scores displayed on the leaderboard
+- Difficulty levels, this could by making words which contains up to 5 letters easy. Intermeditate levels between 6-8 and hard level for words with 8 letters and above 
+- Timer could be added to the game, the timer could be set according to difficulty levels
