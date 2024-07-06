@@ -50,7 +50,7 @@ def get_random_words(secret_word):
     Generate random words from the
     imported list
     """
-    word = random.choice(secret_word)
+    secret_word = random.choice(secret_word)
     while "-" in word or " " in words:
         word = random.choice(secret_word)
     return word.upper()
@@ -80,7 +80,7 @@ def menu():
         print('Press 1 to start the game')
         print('Press 2 for the rules of the game')
         print('Press 3 to exit the game')
-        choice = input('Please choose one of the following options: \n')
+        option = input('Please choose one of the following options: \n')
         if option == '1':
             menu_options = False
             user_name()
@@ -130,9 +130,39 @@ def play_game():
     secret_word, category_name = get_word_category()
     secret_word = "_" * len(word)
     letters_in_secret_word = set(word)
-    guessed_letters = set(word)
+    guessed_letters = set()
     lives = 6 
     print(secret_word)
+    alpha = set(string.ascii_uppercase)
+    print(f'guesses left: {guesses}')
+
+    while len(letters_in_secret_word) and lives > 0:
+        word_completion = [letter if letter in guessed_letters
+                            else " _ " for letter in secret_word]
+        print("Guessed letters: ", " ".join(guessed_letters))
+        print(f'Lives remaining: {lives}')
+        print('Hidden word: ', ''.join(word_completion))
+        print(hangman_display(lives))
+        guess = input ('Please pick a letter: \n').upper()
+
+        if guess in alpha - guessed_letters:
+            guessed_letters.add(guess)
+            if guess in letters_in_secret_word:
+                letters_in_secret_word.remove(guess)
+                print('')
+            else:
+                lives -= 1
+                print(f'{guess} is not in the secret word')
+        elif guess in guessed_letters:
+            print(f'You have already tried{guess}')
+        else:
+            print('Invalid character selected, please chhose letters only')
+
+    if lives == 0:
+        print(hangman_display(lives))
+        print(f'Unfortunately you have been hanged. The secret word was{word}')
+    else:
+        print(f'Congratulations! The correct word was{word}')
     
 
 if __name__== "__main__":
