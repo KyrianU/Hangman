@@ -22,3 +22,4 @@
 - the visuals for the hangman stages were taken from this video [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w)
 - A lot of my game function drew inspiration from this tutorial [youtube](https://www.youtube.com/watch?v=cJJTnI22IF8)
 - My Word art at the start of the game was generated from this website [ASCII Art Generator](https://patorjk.com/software/taag/#p=display&h=1&f=Doom&t=Hangman)
+- For further help with my game functions[Kylie Ying](https://www.youtube.com/watch?v=cJJTnI22IF8)
