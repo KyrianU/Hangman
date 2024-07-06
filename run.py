@@ -1,4 +1,5 @@
 import random
+import string
 from docs.animals import animal_list
 from docs.cars import car_brands
 from docs.countries import country_list
@@ -63,7 +64,7 @@ def user_name():
 
     while True:
         user_name = input('Please enter your username: \n')
-        if name.isalpha():
+        if user_name.isalpha():
             print('Welcome to the game{user_name}, All the best! \n')
             play_game()
             break
@@ -128,13 +129,13 @@ def play_game():
     letters are in the word.
     """
     secret_word, category_name = get_word_category()
-    secret_word = "_" * len(word)
-    letters_in_secret_word = set(word)
+    secret_word = "_" * len(secret_word)
+    letters_in_secret_word = set(secret_word)
     guessed_letters = set()
     lives = 6 
     print(secret_word)
     alpha = set(string.ascii_uppercase)
-    print(f'guesses left: {guesses}')
+    print(f'guesses left: {lives}')
 
     while len(letters_in_secret_word) and lives > 0:
         word_completion = [letter if letter in guessed_letters
@@ -160,7 +161,7 @@ def play_game():
 
     if lives == 0:
         print(hangman_display(lives))
-        print(f'Unfortunately you have been hanged. The secret word was{word}')
+        print(f'Unfortunately you have been hanged. The secret word was{secret_word}')
     else:
         print(f'Congratulations! The correct word was{word}')
     
