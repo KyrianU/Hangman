@@ -98,6 +98,29 @@ def menu():
             print(f'sorry,{option}is not a valid option, please choose between 1,2 or 3')
             menu()
 
+
+def game_end():
+    """
+    This is the end of the game option screen.
+    The user will have the option of either
+    playing the game again, or quit the game
+    and be redirected to the main menu
+    """
+    while True:
+        print('Would you like to play again?')
+        play_again = input("Press 'Y' for Yes or 'N' for No \n")
+
+        if play_again == 'Y':
+            play_game()
+            break
+        elif play_again == 'N':
+            print('Thank you for playing. Hope to see you soon... \n')
+            enter()
+            menu()
+        else:
+            print("Invalid choice, please chhose between 'Y' or 'N' \n")
+
+
 def rules():
     """
     displays the rule of the
@@ -157,11 +180,12 @@ def play_game():
         elif guess in guessed_letters:
             print(f'You have already tried{guess}')
         else:
-            print('Invalid character selected, please chhose letters only')
+            print('Invalid character selected, please choose letters only')
 
     if lives == 0:
         print(hangman_display(lives))
         print(f'Unfortunately you have been hanged. The secret word was{secret_word}')
+        game_end()
     else:
         print(f'Congratulations! The correct word was{word}')
     
