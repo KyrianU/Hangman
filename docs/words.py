@@ -65,7 +65,7 @@ words = [
     "Lizard",
     "Salmon",
     "Spider",
-        "Pakistan",
+    "Pakistan",
     "Iran",
     "France",
     "Wales",
