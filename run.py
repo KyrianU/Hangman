@@ -1,5 +1,6 @@
 import random
 import string
+from colorama import fore, init
 from docs.animals import animal_list
 from docs.cars import car_brands
 from docs.countries import country_list
@@ -51,10 +52,7 @@ def get_random_words(secret_word):
     Generate random words from the
     imported list
     """
-    secret_word = random.choice(secret_word)
-    while "-" in word or " " in words:
-        word = random.choice(secret_word)
-    return word.upper()
+    return random.choice(secret_word).upper()
 
 def user_name():
     """
@@ -63,9 +61,9 @@ def user_name():
     """
 
     while True:
-        user_name = input('Please enter your username: \n')
-        if user_name.isalpha():
-            print('Welcome to the game{user_name}, All the best! \n')
+        name = input('Please enter your username: \n')
+        if name.isalpha():
+            print('Welcome to the game {name}, All the best! \n')
             play_game()
             break
         else:
@@ -121,6 +119,17 @@ def game_end():
             print("Invalid choice, please chhose between 'Y' or 'N' \n")
 
 
+def enter():
+    """
+    This function is for the sole purpose for
+    option 2 of the menu function and 'N'
+    option in the game_end function. Once the user
+    press enter, It will take them back to the main
+    menu
+    """
+    input('Press Enter to be redirected to the Menu')
+
+
 def rules():
     """
     displays the rule of the
@@ -152,11 +161,10 @@ def play_game():
     letters are in the word.
     """
     secret_word, category_name = get_word_category()
-    secret_word = "_" * len(secret_word)
-    letters_in_secret_word = set(secret_word)
+    answer = random_word(secret_word)
     guessed_letters = set()
     lives = 6 
-    print(secret_word)
+    print(f"secret word: {secret_word}")
     alpha = set(string.ascii_uppercase)
     print(f'guesses left: {lives}')
 
@@ -184,7 +192,7 @@ def play_game():
 
     if lives == 0:
         print(hangman_display(lives))
-        print(f'Unfortunately you have been hanged. The secret word was{secret_word}')
+        print(f'Unfortunately you have been hanged. The secret word was{word}')
         game_end()
     else:
         print(f'Congratulations! The correct word was{word}')
