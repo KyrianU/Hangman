@@ -6,6 +6,8 @@ from docs.cars import car_brands
 from docs.countries import country_list
 from docs.gallows import hangman_display
 
+init()
+# Initialises Colorama
 
 def hangman_title():
     """
@@ -26,26 +28,6 @@ def hangman_title():
 
 hangman_title()
 
-def get_word_category():
-    """
-    Select a category from the following 3
-    categories
-    """
-    print("\n Please choose between the following options: \n")
-    print("  ---- ANIMALS ---- CARS ---- COUNTRIES ---- \n")
-    user_choice = input("").lower()
-
-    print(f"\n You chose {user_choice}, Good luck! \n")
-
-    if user_choice == "cars":
-        return car_brands, "cars"
-    elif user_choice == "animals":
-        return animal_list, "animals"
-    elif user_choice == "countries":
-        return country_list, "countries"
-    else:
-        print(f"This option is not valid! Please try again")
-    return get_word_category()
 
 def get_random_words(secret_word):
     """
