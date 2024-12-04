@@ -1,9 +1,6 @@
 import random
 import string
-from colorama import fore, init
-from docs.animals import animal_list
-from docs.cars import car_brands
-from docs.countries import country_list
+from colorama import Fore, init
 from docs.gallows import hangman_display
 
 init()
@@ -28,13 +25,15 @@ def hangman_title():
 
 hangman_title()
 
-
-def get_random_words(secret_word):
+def get_random_words(words):
     """
     Generate random words from the
     imported list
     """
-    return random.choice(secret_word).upper()
+    word = random.choice(words)
+    while "-" in word or " " in words:
+        word = random.choice(words)
+    return word.upper()
 
 def user_name():
     """
