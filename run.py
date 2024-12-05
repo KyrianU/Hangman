@@ -2,6 +2,7 @@ import random
 import string
 from docs.words import words
 from colorama import Fore, init
+from ascii_art import trophy, thanks, lets_go
 from docs.gallows import hangman_display
 
 init()
@@ -156,7 +157,7 @@ def play_game():
                             else " _ " for letter in words]
         print("Guessed letters: ", " ".join(guessed_letters))
         print(f'Lives remaining: {lives}')
-        print('Hidden word: ', ''.join(word_completion))
+        print('answer: ', ''.join(word_completion))
         print(hangman_display(lives))
         guess = input ('Please pick a letter: \n').upper()
 
@@ -167,9 +168,9 @@ def play_game():
                 print('')
             else:
                 lives -= 1
-                print(f'{guess} is not in the secret word')
+                print(f'{Fore.RED}{guess} is not in the secret word{Fore.RESET}')
         elif guess in guessed_letters:
-            print(f'You have already tried{guess}')
+            print(f'{Fore.RED}You have already tried{guess}{Fore.RESET}')
         else:
             print('Invalid character selected, please choose letters only')
 
@@ -178,7 +179,7 @@ def play_game():
         print(f'Unfortunately you have been hanged. The secret word was {word}')
         game_end()
     else:
-        print(f'Congratulations! The correct word was{word}')
+        print(f'{Fore.GREEN}Congratulations! The correct word was {word}{Fore.RESET}')
     
 
 if __name__== "__main__":
