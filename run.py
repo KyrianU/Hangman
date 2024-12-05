@@ -76,7 +76,7 @@ def menu():
             print('Thanks for playing, we hope to see you soon...')
             exit()
         else:
-            print(f'sorry,{option}is not a valid option, please choose between 1,2 or 3')
+            print(f'{Fore.RED}Sorry,{option} is not a valid option, please choose between 1,2 or 3{Fore.RESET}')
             menu()
 
 
@@ -154,7 +154,7 @@ def play_game():
 
     while len(letters_in_words) and lives > 0:
         word_completion = [letter if letter in guessed_letters
-                            else " _ " for letter in words]
+                            else " _ " for letter in word]
         print("Guessed letters: ", " ".join(guessed_letters))
         print(f'Lives remaining: {lives}')
         print('answer: ', ''.join(word_completion))
@@ -165,7 +165,7 @@ def play_game():
             guessed_letters.add(guess)
             if guess in letters_in_words:
                 letters_in_words.remove(guess)
-                print('')
+                print(f'{Fore.GREEN} Well done! {guess} is in the word.{Fore.RESET}')
             else:
                 lives -= 1
                 print(f'{Fore.RED}{guess} is not in the secret word{Fore.RESET}')
@@ -176,7 +176,7 @@ def play_game():
 
     if lives == 0:
         print(hangman_display(lives))
-        print(f'Unfortunately you have been hanged. The secret word was {word}')
+        print(f'{Fore.RED}Unfortunately you have been hanged. The secret word was {word}{Fore.RESET}')
         game_end()
     else:
         print(f'{Fore.GREEN}Congratulations! The correct word was {word}{Fore.RESET}')
