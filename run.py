@@ -1,5 +1,6 @@
 import random
 import string
+from docs.words import words
 from colorama import Fore, init
 from docs.gallows import hangman_display
 
@@ -44,11 +45,12 @@ def user_name():
     while True:
         name = input('Please enter your username: \n')
         if name.isalpha():
-            print('Welcome to the game {name}, All the best! \n')
+            print(f'{Fore.BLUE}Welcome to the game {name}, All the best!{Fore.RESET} \n')
             play_game()
             break
         else:
-            print('User name invalid, please use only letters')
+            print(f'{Fore.RED}User name invalid, please use only letters{Fore.RESET}')
+        return name
 
 def menu():
     """
@@ -64,7 +66,6 @@ def menu():
         if option == '1':
             menu_options = False
             user_name()
-            get_word_category()
             play_game()
         elif option == '2':
             menu_options = False
@@ -141,17 +142,18 @@ def play_game():
     The player will then guess how many 
     letters are in the word.
     """
-    secret_word, category_name = get_word_category()
-    answer = random_word(secret_word)
+    word = get_random_words(words).upper()
+    answer = "_" * len(word)
+    letters_in_words = set(word)
     guessed_letters = set()
     lives = 6 
-    print(f"secret word: {secret_word}")
+    print(answer)
     alpha = set(string.ascii_uppercase)
     print(f'guesses left: {lives}')
 
-    while len(letters_in_secret_word) and lives > 0:
+    while len(letters_in_words) and lives > 0:
         word_completion = [letter if letter in guessed_letters
-                            else " _ " for letter in secret_word]
+                            else " _ " for letter in words]
         print("Guessed letters: ", " ".join(guessed_letters))
         print(f'Lives remaining: {lives}')
         print('Hidden word: ', ''.join(word_completion))
@@ -160,8 +162,8 @@ def play_game():
 
         if guess in alpha - guessed_letters:
             guessed_letters.add(guess)
-            if guess in letters_in_secret_word:
-                letters_in_secret_word.remove(guess)
+            if guess in letters_in_words:
+                letters_in_words.remove(guess)
                 print('')
             else:
                 lives -= 1
@@ -173,7 +175,7 @@ def play_game():
 
     if lives == 0:
         print(hangman_display(lives))
-        print(f'Unfortunately you have been hanged. The secret word was{word}')
+        print(f'Unfortunately you have been hanged. The secret word was {word}')
         game_end()
     else:
         print(f'Congratulations! The correct word was{word}')
