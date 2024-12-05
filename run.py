@@ -1,5 +1,6 @@
 import random
 import string
+from os import system, name
 from docs.words import words
 from colorama import Fore, init
 from ascii_art import trophy, thanks, lets_go
@@ -180,7 +181,20 @@ def play_game():
         game_end()
     else:
         print(f'{Fore.GREEN}Congratulations! The correct word was {word}{Fore.RESET}')
-    
+
+
+def clear_screen():
+    """
+    Clears Terminal
+    """
+    # taken from https://www.geeksforgeeks.org/clear-screen-python/ 
+    # for windows 
+    if name == 'nt':
+        _ = system('cls')
+
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')    
 
 if __name__== "__main__":
     """
