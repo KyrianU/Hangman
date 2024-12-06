@@ -35,6 +35,9 @@
 - Invalid guess
     - When the user inputs anything other than letters(number or special characters), this will genereate an error on the app (in red) confirming to the user that only letters will be accepted as guesses. This will not affect the amount of attempts left
 
+- Game Won
+    - The game is won when the user has guessed all the correct letters in the secret word. A winner message will then be revealed and the user will be presented with the option of playing again or heading back to the main menu.
+
 # Features to Implement In future
 
 - Scoring sytem with the best scores displayed on the leaderboard
