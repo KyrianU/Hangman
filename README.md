@@ -77,6 +77,16 @@
 bugs that were quickly fixed, the functions worked well as intended
 - I have deliberately tried to cause the code to break by using incorrect outputs, the aim of this was to test if the various error messages were working, and they were.
 
+- When I first uploaded my code to CI Python Linter, It was throwing a lot of error codes like the
+below
+
+![Testing Before](docs/screenshots/testing-before.png)
+
+- After carefully going through the code, I was left with minimal errors which unfortunately I 
+could not find a fix for
+
+![Testing After](docs/screenshots/testingafter.png)
+
 # Technologies used
 
 - Languages used 
