@@ -44,6 +44,16 @@
 - Invalid inputs
     - For every invalid inputs, an error will be displayed on the program and the user will the be asked to input their option again
 
+
+# Testing 
+
+
+# Technologies used
+
+- Languages used 
+    - Python 
+- Other languages used in the project were html, css and javascript. However these languages were already part of the code institute provided to create this project.
+
 # Features to Implement In future
 
 - Scoring sytem with the best scores displayed on the leaderboard
