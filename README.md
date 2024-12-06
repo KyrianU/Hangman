@@ -61,6 +61,23 @@
 - Timer could be added to the game, the timer could be set according to difficulty levels
 - Divide the words into categories (i.e sports, countries, anaimals, plants & cars etc...)
 
+# Deployment
+
+- The site was deployed on Heroku. the steps to the deployment are listed below 
+    - Login or Signup to [Heroku](https://www.heroku.com/)
+    - Once signed up/ logged in - create a new app, followed by selecting a unique name and regions
+    - click on "create app" 
+    - Click on "settings"
+    - Then Click on "reveal config vars"
+    - The following will need to be inputed, otherwise you could face issues during deployemnt
+        - Key:PORT, Value:8000
+    - Once that is done, select buildpacks, then select python and click save
+    - Once again, select buildpacks, but this time, select Nodejs and then click save again
+    - Ensure that buildpacks are in this order (Python then Nodejs)
+    - Once that is done, navigate to "Deploy" tab. Select GitHub as the deployment method and connect to GitHub and select your chosen repository to connect.
+    - You have the option to select "deploy automatically", which will automatically deploy whenever you push to GitHub. The second option is to manually deploy.
+    - Once you have selected your option, Heroku will then deploy
+
 # Credits
 
 - the visuals for the hangman stages were taken from this video [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w)
