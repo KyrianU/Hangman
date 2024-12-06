@@ -58,6 +58,12 @@
 
 ![Game Over](docs/screenshots/game-lost.png)
 
+- The User has two options from here, either quit the game like below 
+![End of game](docs/screenshots/endofgame.png)
+
+- The user can start a new game, like below
+![Newgame](docs/screenshots/newgame.png)
+
 - Invalid inputs
     - For every invalid inputs, an error will be displayed on the program and the user will the be asked to input their option again
 

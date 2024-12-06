@@ -88,7 +88,6 @@ def menu():
             menu()
 
 
-
 def game_end():
     """
     This is the end of the game option screen.
@@ -133,10 +132,10 @@ def rules():
         """
         Welcome to the game of Hangman!
         The rules are very simple, you are given a random word, to
-        which you have 6 attempts at guessing it correctly. 
-        Eeach unsuccesful guesses will add a new 
+        which you have 6 attempts at guessing it correctly.
+        Eeach unsuccesful guesses will add a new
         body part to the gallows. After 6 unsuccesful
-        attempts the player will be hunged and the game will be 
+        attempts the player will be hunged and the game will be
         over. To be the winner, the player has to guess the
         full word within the allocated 6 guesses
 
@@ -212,7 +211,7 @@ def clear_screen():
         _ = system('clear')
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     """
     Start Game
     """
