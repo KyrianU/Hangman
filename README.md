@@ -19,6 +19,8 @@
     - Option to read the rules of the game
     - Option to exit the game menu
 
+![Gamescreen](docs/screenshots/gamescreen.png)
+
 
 - Game rule
     - Short display of the game rules which is followed by a function to return back to the menu
