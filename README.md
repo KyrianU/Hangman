@@ -131,3 +131,5 @@ could not find a fix for
 - the clear screen function was taken from this site [Clear screen](https://www.geeksforgeeks.org/clear-screen-python/)
 - The tropy design was taken from this site [Trophy](https://ascii.co.uk/art/trophy)
 - the colors introduced on the app was inspired by this site[Colorama](https://www.geeksforgeeks.org/introduction-to-python-colorama/)
+
+- Whilst I have tried to make sure I deviate from those videos and links, there may be some similaries in my code
