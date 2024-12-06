@@ -50,7 +50,7 @@ def user_name():
     while True:
         name = input('Please enter your username: \n')
         if name.isalpha():
-            print(f'{Fore.BLUE}Welcome to the game {name},All the best!{Fore.RESET} \n')
+            print(f'{Fore.YELLOW}Welcome to the game {name},All the best!{Fore.RESET} \n')
             lets_go()
             play_game()
             break
