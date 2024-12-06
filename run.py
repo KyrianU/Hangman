@@ -3,7 +3,7 @@ import string
 from os import system, name
 from docs.words import words
 from colorama import Fore, init
-from ascii_art import trophy, thanks, lets_go
+from ascii_art import trophy, thanks, lets_go, loser
 from docs.gallows import hangman_display
 
 init()
@@ -48,6 +48,7 @@ def user_name():
         name = input('Please enter your username: \n')
         if name.isalpha():
             print(f'{Fore.BLUE}Welcome to the game {name}, All the best!{Fore.RESET} \n')
+            lets_go()
             play_game()
             break
         else:
@@ -58,20 +59,22 @@ def menu():
     """
     Displays the menu choices
     """
-    hangman_title()
+    
     menu_options = True
     while menu_options:
-        print('Press 1 to start the game')
-        print('Press 2 for the rules of the game')
-        print('Press 3 to exit the game')
+        print(f'{Fore.BLUE}Press 1 to start the game{Fore.RESET}')
+        print(f'{Fore.YELLOW}Press 2 for the rules of the game{Fore.RESET}')
+        print(f'Press 3 to exit the game')
         option = input('Please choose one of the following options: \n')
         if option == '1':
             menu_options = False
+            clear_screen()
             user_name()
             play_game()
         elif option == '2':
             menu_options = False
-            play_game()
+            rules()
+            clear_screen()
         elif option == '3':
             menu_options = False
             print('Thanks for playing, we hope to see you soon...')
@@ -96,11 +99,13 @@ def game_end():
             play_game()
             break
         elif play_again == 'N':
-            print('Thank you for playing. Hope to see you soon... \n')
+            thanks()
             enter()
+            clear_screen()
+            hangman_title()
             menu()
         else:
-            print("Invalid choice, please chhose between 'Y' or 'N' \n")
+            print("Invalid choice, please choose between 'Y' or 'N' \n")
 
 
 def enter():
@@ -177,10 +182,14 @@ def play_game():
 
     if lives == 0:
         print(hangman_display(lives))
+        loser()
         print(f'{Fore.RED}Unfortunately you have been hanged. The secret word was {word}{Fore.RESET}')
         game_end()
     else:
         print(f'{Fore.GREEN}Congratulations! The correct word was {word}{Fore.RESET}')
+        trophy()
+        game_end()
+        clear_screen()
 
 
 def clear_screen():
