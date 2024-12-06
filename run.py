@@ -183,7 +183,7 @@ def play_game():
         elif guess in guessed_letters:
             print(f'{Fore.RED}You have already tried {guess}{Fore.RESET}')
         else:
-            print('Invalid character selected, please choose letters only')
+            print(f'{Fore.RED}Invalid character selected, please choose letters only{Fore.RESET}')
 
     if lives == 0:
         print(hangman_display(lives))

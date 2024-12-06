@@ -30,7 +30,8 @@
 - Game Play 
     - to access the game, the user will have to choose option 1 at the main menu. The user will then be prompted to enter their username. A good luck message will then be displayed. A random word will then be generated for the user to guess.
 
-1[Username](docs/screenshots/username.png)
+![Username](docs/screenshots/username.png)
+![Username1](docs/screenshots/username1.png)
 
 - Correct Guess
     - Once the game has started, the user is then presented with the secret word to guess. The player can then see how many letters there is the word. When the player correclty guesses a letter, a message will be printed in green confirming a correct guess, followed by the empty space in the word being replaced by the correct letter. If the correct letter is appaearing twice in the word, the empty spaces will be replaced by the correctly guess letters
@@ -43,7 +44,7 @@
 ![Incorrect guess](docs/screenshots/incorrect-guess.png)
 
 - Invalid guess
-    - When the user inputs anything other than letters(number or special characters), this will genereate an error on the app (in red) confirming to the user that only letters will be accepted as guesses. This will not affect the amount of attempts left
+    - When the user inputs anything other than letters(number or special characters), this will genereate an error on the app (in red) confirming to the user that only letters will be accepted as guesses. This will not affect the amount of attempts left.
 
 - Game Won
     - The game is won when the user has guessed all the correct letters in the secret word. A winner message will then be revealed and the user will be presented with the option of playing again or heading back to the main menu.
@@ -57,6 +58,8 @@
 
 - Invalid inputs
     - For every invalid inputs, an error will be displayed on the program and the user will the be asked to input their option again
+
+![Invalid guess](docs/screenshots/invalidguess.png)
 
 
 # Testing 
