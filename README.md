@@ -25,6 +25,8 @@
 - Game rule
     - Short display of the game rules which is followed by a function to return back to the menu
 
+![Gamerule](docs/screenshots/gamerule.png)
+
 - Game Play 
     - to access the game, the user will have to choose option 1 at the main menu. The user will then be prompted to enter their username. A good luck message will then be displayed. A random word will then be generated for the user to guess.
 
