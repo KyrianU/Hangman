@@ -46,6 +46,8 @@
 - Invalid guess
     - When the user inputs anything other than letters(number or special characters), this will genereate an error on the app (in red) confirming to the user that only letters will be accepted as guesses. This will not affect the amount of attempts left.
 
+![Invalid guess](docs/screenshots/invalidguess2.png)
+
 - Game Won
     - The game is won when the user has guessed all the correct letters in the secret word. A winner message will then be revealed and the user will be presented with the option of playing again or heading back to the main menu.
 
@@ -60,6 +62,7 @@
     - For every invalid inputs, an error will be displayed on the program and the user will the be asked to input their option again
 
 ![Invalid guess](docs/screenshots/invalidguess.png)
+![Invalid input](docs/screenshots/invalidinput.png)
 
 
 # Testing 
