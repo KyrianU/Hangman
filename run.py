@@ -50,12 +50,16 @@ def user_name():
     while True:
         name = input('Please enter your username: \n')
         if name.isalpha():
-            print(f'{Fore.YELLOW}Welcome to the game {name},All the best!{Fore.RESET} \n')
+            print(
+             f'{Fore.YELLOW}Welcome to the game {name},'
+             f' All the best!{Fore.RESET} \n')
             lets_go()
             play_game()
             break
         else:
-            print(f'{Fore.RED}User name invalid, please use only letters{Fore.RESET}')
+            print(
+             f'{Fore.RED}User name invalid,'
+             f' please use only letters{Fore.RESET}')
         return name
 
 
@@ -84,7 +88,10 @@ def menu():
             print('Thanks for playing, we hope to see you soon...')
             exit()
         else:
-            print(f'{Fore.RED}Sorry, {option} is not a valid option, please choose between 1,2 or 3{Fore.RESET}')
+            print(
+             f'{Fore.RED}Sorry, {option} is not a valid option,'
+             f' please choose between 1,2 or 3{Fore.RESET}'
+            )
             menu()
 
 
@@ -176,22 +183,32 @@ def play_game():
             guessed_letters.add(guess)
             if guess in letters_in_words:
                 letters_in_words.remove(guess)
-                print(f'{Fore.GREEN} Well done! {guess} is in the word.{Fore.RESET}')
+                print(
+                    f'{Fore.GREEN} Well done!'
+                    f' {guess} is in the word.{Fore.RESET}')
             else:
                 lives -= 1
-                print(f'{Fore.RED}{guess} is not in the secret word{Fore.RESET}')
+                print(
+                    f'{Fore.RED}{guess} is not in the secret word{Fore.RESET}')
         elif guess in guessed_letters:
-            print(f'{Fore.RED}You have already tried {guess}{Fore.RESET}')
+            print(
+             f'{Fore.RED}You have already tried {guess}{Fore.RESET}')
         else:
-            print(f'{Fore.RED}Invalid character selected, please choose letters only{Fore.RESET}')
+            print(
+             f'{Fore.RED}Invalid character selected,'
+             f' please choose letters only{Fore.RESET}')
 
     if lives == 0:
         print(hangman_display(lives))
         loser()
-        print(f'{Fore.RED}Unfortunately you have been hung. The secret word was {word}{Fore.RESET}')
+        print(
+         f'{Fore.RED}Unfortunately you have been hung.'
+         f' The secret word was {word}{Fore.RESET}')
         game_end()
     else:
-        print(f'{Fore.GREEN}Congratulations! The correct word was {word}{Fore.RESET}')
+        print(
+         f'{Fore.GREEN}Congratulations!'
+         f' The correct word was {word}{Fore.RESET}')
         trophy()
         game_end()
         clear_screen()

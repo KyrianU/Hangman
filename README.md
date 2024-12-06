@@ -73,6 +73,9 @@
 
 # Testing 
 
+- I have tested the functions in the app to see if they were correcly functioning, other than small
+bugs that were quickly fixed, the functions worked well as intended
+- I have deliberately tried to cause the code to break by using incorrect outputs, the aim of this was to test if the various error messages were working, and they were.
 
 # Technologies used
 
