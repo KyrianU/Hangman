@@ -38,6 +38,9 @@
 - Game Won
     - The game is won when the user has guessed all the correct letters in the secret word. A winner message will then be revealed and the user will be presented with the option of playing again or heading back to the main menu.
 
+- Game Over
+    - If the player has 6 incorrect guesses, the user is hung. The secret word is then revealed and the user is then presented with the option of either playing again or going back to the main menu.
+
 # Features to Implement In future
 
 - Scoring sytem with the best scores displayed on the leaderboard
