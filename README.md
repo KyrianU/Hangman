@@ -11,6 +11,18 @@
 - Expects little to no bugs
 - Good response to player/user input
 
+# Features
+
+- Home Page/Main menu
+    - Game Header
+    - Option to select start of game
+    - Option to read the rules of the game
+    - Option to exit the game menu
+
+
+- Game rule
+    - Short display of the game rules which is followed by a function to return back to the menu
+
 # Features to Implement In future
 
 - Scoring sytem with the best scores displayed on the leaderboard
