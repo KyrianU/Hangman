@@ -29,6 +29,8 @@
 - Correct Guess
     - Once the game has started, the user is then presented with the secret word to guess. The player can then see how many letters there is the word. When the player correclty guesses a letter, a message will be printed in green confirming a correct guess, followed by the empty space in the word being replaced by the correct letter. If the correct letter is appaearing twice in the word, the empty spaces will be replaced by the correctly guess letters
 
+![Correct Guess](docs/screenshots/correct-guess.png)
+
 - Incorrect Guess
     - If a letter guessed by the user is incorrect, a message will the be printed in red confirming that the letter is indeed not in the secret word. The amount of attempts will then go down by 1, a body part will then be added to the gallows. The incorrect letter will then be added to the list of incorrect letters.
 
