@@ -34,6 +34,8 @@
 - Incorrect Guess
     - If a letter guessed by the user is incorrect, a message will the be printed in red confirming that the letter is indeed not in the secret word. The amount of attempts will then go down by 1, a body part will then be added to the gallows. The incorrect letter will then be added to the list of incorrect letters.
 
+![Incorrect guess](docs/screenshots/incorrect-guess.png)
+
 - Invalid guess
     - When the user inputs anything other than letters(number or special characters), this will genereate an error on the app (in red) confirming to the user that only letters will be accepted as guesses. This will not affect the amount of attempts left
 
