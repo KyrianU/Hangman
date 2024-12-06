@@ -77,8 +77,8 @@ def menu():
             play_game()
         elif option == '2':
             menu_options = False
-            rules()
             clear_screen()
+            rules()
         elif option == '3':
             menu_options = False
             print('Thanks for playing, we hope to see you soon...')
