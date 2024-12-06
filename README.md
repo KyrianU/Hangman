@@ -4,6 +4,8 @@
 
  Hangman is a python terminal game, that runs on the code institute mock terminal called Heroku. The game is aimed at users who like to play a game of hangman. The game is split into 3 caterogies( Cars, Animals and Countries) and the user will have to choose which category they want to try before the game generates a random word from that category. The game will generate a random word for which the player will have 6 attempts per word before the game is declared over
 
+ Find the link to my deployed site[Hangman](https://hangmann-e86bd5df3e3d.herokuapp.com/)
+
 # User goals
 
 - The program should be simple to navigate
@@ -71,7 +73,7 @@
 ![Invalid input](docs/screenshots/invalidinput.png)
 
 
-# Testing 
+# Testing & Bugs
 
 - I have tested the functions in the app to see if they were correcly functioning, other than small
 bugs that were quickly fixed, the functions worked well as intended
@@ -86,6 +88,9 @@ below
 could not find a fix for
 
 ![Testing After](docs/screenshots/testingafter.png)
+
+- A lot of my bugs that were found on my codes were to do with tralling white spaces and line being too long. With the help of Python Linter, I was able to clear most of these faults.
+
 
 # Technologies used
 
