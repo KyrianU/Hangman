@@ -9,24 +9,26 @@ from docs.gallows import hangman_display
 init()
 # Initialises Colorama
 
+
 def hangman_title():
     """
     Game title as the header
     """
     print("""
 
-    _   _                                               
-    | | | |                                              
-    | |_| |  __ _  _ __    __ _  _ __ ___    __ _  _ __  
-    |  _  | / _` || '_ \\\\  / _` || '_ ` _ \\  / _` || '_ \\ 
+     _   _                                             
+    | | | |                                          
+    | |_| |  __ _  _ __    __ _  _ __ ___    __ _  _ __
+    |  _  | / _` || '_ \\\\  / _` || '_ ` _ \\  / _` || '_ \\
     | | | || (_| || | | || (_| || | | | | || (_| || | | |
     \\_| |_/ \\__,_||_| |_| \\__, ||_| |_| |_| \\__,_||_| |_|
-                        __/ |                         
-                        |___/                          
-    """
-    )
+                        __/ |                      
+                        |___/                      
+    """)
+
 
 hangman_title()
+
 
 def get_random_words(words):
     """
@@ -38,6 +40,7 @@ def get_random_words(words):
         word = random.choice(words)
     return word.upper()
 
+
 def user_name():
     """
     Requires user to input their
@@ -47,7 +50,7 @@ def user_name():
     while True:
         name = input('Please enter your username: \n')
         if name.isalpha():
-            print(f'{Fore.BLUE}Welcome to the game {name}, All the best!{Fore.RESET} \n')
+            print(f'{Fore.BLUE}Welcome to the game {name},All the best!{Fore.RESET} \n')
             lets_go()
             play_game()
             break
@@ -55,16 +58,17 @@ def user_name():
             print(f'{Fore.RED}User name invalid, please use only letters{Fore.RESET}')
         return name
 
+
 def menu():
     """
     Displays the menu choices
     """
-    
+
     menu_options = True
     while menu_options:
         print(f'{Fore.BLUE}Press 1 to start the game{Fore.RESET}')
         print(f'{Fore.YELLOW}Press 2 for the rules of the game{Fore.RESET}')
-        print(f'Press 3 to exit the game')
+        print(f'{Fore.RED}Press 3 to exit the game{Fore.RESET}')
         option = input('Please choose one of the following options: \n')
         if option == '1':
             menu_options = False
@@ -127,11 +131,12 @@ def rules():
     print(
         """
         Welcome to the game of Hangman!
-        The rules are very simple, You have the choice of 3 word categories 
-        from cars, countries and animals. Once you choose your category, you
-        will then be given a random word, each unsuccesful guesses will a new body
-        part to the gallows. After 6 unsuccesful attempts the player will be hunged
-        and the game will be over. To be the winner, the player has to guess the
+        The rules are very simple, you are given a random word, to
+        which you have 6 attempts at guessing it correctly. 
+        Eeach unsuccesful guesses will add a new 
+        body part to the gallows. After 6 unsuccesful
+        attempts the player will be hunged and the game will be 
+        over. To be the winner, the player has to guess the
         full word within the allocated 6 guesses
 
         All the best!
@@ -146,26 +151,26 @@ def play_game():
     Starts the game for the user.
     A random word will be picked out
     from the word category selected.
-    The player will then guess how many 
+    The player will then guess how many
     letters are in the word.
     """
     word = get_random_words(words).upper()
     answer = "_" * len(word)
     letters_in_words = set(word)
     guessed_letters = set()
-    lives = 6 
+    lives = 6
     print(answer)
     alpha = set(string.ascii_uppercase)
     print(f'guesses left: {lives}')
 
     while len(letters_in_words) and lives > 0:
         word_completion = [letter if letter in guessed_letters
-                            else " _ " for letter in word]
+                           else " _ " for letter in word]
         print("Guessed letters: ", " ".join(guessed_letters))
         print(f'Lives remaining: {lives}')
         print('answer: ', ''.join(word_completion))
         print(hangman_display(lives))
-        guess = input ('Please pick a letter: \n').upper()
+        guess = input('Please pick a letter: \n').upper()
 
         if guess in alpha - guessed_letters:
             guessed_letters.add(guess)
@@ -176,7 +181,7 @@ def play_game():
                 lives -= 1
                 print(f'{Fore.RED}{guess} is not in the secret word{Fore.RESET}')
         elif guess in guessed_letters:
-            print(f'{Fore.RED}You have already tried{guess}{Fore.RESET}')
+            print(f'{Fore.RED}You have already tried {guess}{Fore.RESET}')
         else:
             print('Invalid character selected, please choose letters only')
 
@@ -196,14 +201,15 @@ def clear_screen():
     """
     Clears Terminal
     """
-    # taken from https://www.geeksforgeeks.org/clear-screen-python/ 
-    # for windows 
+    # taken from https://www.geeksforgeeks.org/clear-screen-python/
+    # for windows
     if name == 'nt':
         _ = system('cls')
 
     # for mac and linux(here, os.name is 'posix')
     else:
-        _ = system('clear')    
+        _ = system('clear')
+
 
 if __name__== "__main__":
     """
